@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "Price Tracker & Alert API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"demo\",\n  \"email\": \"demo@example.com\",\n  \"password\": \"secret123\"\n}"
+        },
+        "url": {"raw": "http://127.0.0.1:8000/api/register/", "host": ["http://127.0.0.1:8000"], "path": ["api", "register"]}
+      }
+    },
+    {
+      "name": "Get Token",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"demo\",\n  \"password\": \"secret123\"\n}"
+        },
+        "url": {"raw": "http://127.0.0.1:8000/api/token/", "host": ["http://127.0.0.1:8000"], "path": ["api", "token"]}
+      }
+    },
+    {
+      "name": "List Products",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{token}}"}],
+        "url": {"raw": "http://127.0.0.1:8000/api/products/", "host": ["http://127.0.0.1:8000"], "path": ["api", "products"]}
+      }
+    },
+    {
+      "name": "List Tracked Products",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{token}}"}],
+        "url": {"raw": "http://127.0.0.1:8000/api/tracked-products/", "host": ["http://127.0.0.1:8000"], "path": ["api", "tracked-products"]}
+      }
+    },
+    {
+      "name": "List Alerts",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{token}}"}],
+        "url": {"raw": "http://127.0.0.1:8000/api/alerts/", "host": ["http://127.0.0.1:8000"], "path": ["api", "alerts"]}
+      }
+    }
+  ]
+}
